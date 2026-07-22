@@ -1,0 +1,12 @@
+{
+  "name": "orbit-ops",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"pnpm --dir apps/api dev\" \"pnpm --dir apps/web dev\"",
+    "build": "pnpm --dir apps/api build && pnpm --dir apps/web build",
+    "db:seed": "pnpm --dir apps/api seed",
+    "test": "pnpm --dir apps/api test"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
