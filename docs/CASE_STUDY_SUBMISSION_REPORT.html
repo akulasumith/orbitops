@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Full Stack Developer Case Study Submission Report - Orbit Ops</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+  body {
+    font-family: 'Manrope', sans-serif;
+    color: #17211e;
+    line-height: 1.6;
+    padding: 40px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #123b34;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1d5146;
+    border-bottom: 2px solid #e7ed63;
+    padding-bottom: 6px;
+    margin-top: 35px;
+  }
+  h3 {
+    font-size: 16px;
+    color: #173f37;
+    margin-top: 25px;
+  }
+  .header-badge {
+    background: #173f37;
+    color: #e7ed63;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  th {
+    background: #173f37;
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5ebe7;
+  }
+  tr:nth-child(even) td {
+    background: #f8faf8;
+  }
+  a {
+    color: #1d5146;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  code, pre {
+    font-family: 'DM Mono', monospace;
+    background: #f0f4f1;
+    color: #153c35;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  pre {
+    padding: 16px;
+    display: block;
+    overflow-x: auto;
+    border-left: 4px solid #173f37;
+    line-height: 1.4;
+  }
+  .callout {
+    background: #eef7f2;
+    border-left: 4px solid #287a5d;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 20px 0;
+  }
+  @media print {
+    body { padding: 0; margin: 0; max-width: 100%; }
+    .no-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div className="header-badge">FULL STACK CASE STUDY SUBMISSION</div>
+<h1>Project: Mini ERP + CRM Operations Portal</h1>
+<p style="color: #61736b; font-size: 14px; margin-top: -5px;">System Name: <b>Orbit Ops</b> • Candidate: <b>Sumith Akula</b></p>
+
+<hr style="border: 0; border-top: 1px solid #e1e8e3; margin: 20px 0;" />
+
+<h2>📌 1. Project Overview & Deliverables Summary</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Requirement Item</th>
+      <th>Details / Live Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>1. GitHub Repository</b></td>
+      <td><a href="https://github.com/akulasumith/orbitops" target="_blank">https://github.com/akulasumith/orbitops</a></td>
+    </tr>
+    <tr>
+      <td><b>2. Live Frontend URL</b></td>
+      <td><a href="https://orbitops-web.vercel.app" target="_blank">https://orbitops-web.vercel.app</a></td>
+    </tr>
+    <tr>
+      <td><b>3. Live Backend API URL</b></td>
+      <td><a href="https://orbit-ops-api.onrender.com" target="_blank">https://orbit-ops-api.onrender.com</a></td>
+    </tr>
+    <tr>
+      <td><b>4. Postman Collection</b></td>
+      <td><code>apps/api/postman-collection.json</code></td>
+    </tr>
+    <tr>
+      <td><b>5. Automated Test Suite</b></td>
+      <td><b>9/9 Vitest Integration Tests Passed</b> (100% Pass Rate)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>🔑 2. Role-Based Test Login Credentials</h2>
+<div className="callout">
+  All test accounts are pre-configured with the demo password: <b><code>Demo@123</code></b>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Permissions & Capabilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Admin</b></td>
+      <td><code>admin@orbitops.dev</code></td>
+      <td><code>Demo@123</code></td>
+      <td>Full system access (CRM, Products, Stock Movements, Challans, Record Deletions)</td>
+    </tr>
+    <tr>
+      <td><b>Sales</b></td>
+      <td><code>sales@orbitops.dev</code></td>
+      <td><code>Demo@123</code></td>
+      <td>Customer CRM management, follow-ups timeline, Sales Challan Creation & Cancellation</td>
+    </tr>
+    <tr>
+      <td><b>Warehouse</b></td>
+      <td><code>warehouse@orbitops.dev</code></td>
+      <td><code>Demo@123</code></td>
+      <td>Inventory Catalog management, Audited Stock Movements (IN/OUT adjustments)</td>
+    </tr>
+    <tr>
+      <td><b>Accounts</b></td>
+      <td><code>accounts@orbitops.dev</code></td>
+      <td><code>Demo@123</code></td>
+      <td>Dashboard metrics, Dispatched Challans, Financial & Printable Invoices</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>🏗️ 3. Architecture & Core Engineering Design</h2>
+<pre>
+React + Vite UI  ──(REST API + JWT)──> Express API Engine ──> PostgreSQL Database
+ (apps/web)                              (apps/api)             (Neon / Render / Local)
+                                              │
+                                              ├── Zod Input Validation
+                                              ├── Role-Based Access Control (RBAC)
+                                              ├── SQL Row-Locking (`FOR UPDATE`)
+                                              └── Dual DB Engine (Postgres + Zero-Config Fallback)
+</pre>
+
+<h3>Key Technical Decisions:</h3>
+<ol>
+  <li><b>Immutable Historic Invoices (Product Snapshots)</b>: When a Sales Challan is issued, <code>challan_items</code> explicitly saves <code>product_name</code>, <code>sku</code>, and <code>unit_price</code>. Subsequent catalog price edits will never alter historical delivery invoices.</li>
+  <li><b>Atomic Transactional Stock Locks (<code>FOR UPDATE</code>)</b>: Challan confirmation executes within a database SQL transaction (<code>BEGIN ... COMMIT</code>) with row locks to guarantee stock levels never drop below zero.</li>
+  <li><b>Challan Cancellation & Stock Reversal</b>: One-click cancellation for confirmed challans automatically restores product stock on hand and logs an audited <code>IN</code> movement.</li>
+  <li><b>Dual DB Adapter</b>: The API automatically detects PostgreSQL availability. If PostgreSQL is absent or starting up, it seamlessly operates on an in-memory SQL engine seeded with demo data for zero-config evaluation.</li>
+</ol>
+
+<h2>🛠️ 4. API Endpoints Reference</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Purpose</th>
+      <th>Validation / Auth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>POST</code></td><td><code>/auth/login</code></td><td>JWT Token Generation</td><td>Zod Email & Password</td></tr>
+    <tr><td><code>GET</code></td><td><code>/customers</code></td><td>List & Search Customers</td><td>Supports <code>q</code>, <code>page</code>, <code>limit</code></td></tr>
+    <tr><td><code>POST</code></td><td><code>/customers</code></td><td>Add Customer Record</td><td>Admin / Sales Only</td></tr>
+    <tr><td><code>GET/PATCH</code></td><td><code>/customers/:id</code></td><td>View / Edit Profile</td><td>Admin / Sales Only</td></tr>
+    <tr><td><code>POST</code></td><td><code>/customers/:id/followups</code></td><td>Add Dated CRM Note</td><td>Admin / Sales Only</td></tr>
+    <tr><td><code>GET/POST</code></td><td><code>/products</code></td><td>Inventory Catalog List / Add</td><td>Admin / Warehouse Only</td></tr>
+    <tr><td><code>POST</code></td><td><code>/products/:id/movements</code></td><td>Stock IN/OUT Movement</td><td>Audited Stock Adjustment</td></tr>
+    <tr><td><code>GET/POST</code></td><td><code>/challans</code></td><td>List / Issue Sales Challan</td><td>Atomic Stock Deduction</td></tr>
+    <tr><td><code>POST</code></td><td><code>/challans/:id/cancel</code></td><td>Cancel Delivery Challan</td><td>Atomic Stock Reversal</td></tr>
+    <tr><td><code>GET</code></td><td><code>/challans/:id/invoice</code></td><td>Formatted Financial Invoice</td><td>18% GST Tax Calculations</td></tr>
+  </tbody>
+</table>
+
+<h2>🚀 5. Setup & Local Run Instructions</h2>
+<pre>
+# 1. Clone repo
+git clone https://github.com/akulasumith/orbitops.git
+cd orbitops
+
+# 2. Install dependencies & start dev server
+npx pnpm install
+npx pnpm dev
+
+# 3. Run automated Vitest test suite
+npx pnpm --dir apps/api test
+</pre>
+
+<h2>🌟 6. Bonus Points Implemented</h2>
+<ul>
+  <li>✅ <b>Docker Containerization</b>: Includes multi-stage Dockerfiles (<code>apps/api/Dockerfile</code>, <code>apps/web/Dockerfile</code>) and production compose stack (<code>docker-compose.prod.yml</code>).</li>
+  <li>✅ <b>1-Click Infrastructure Blueprint</b>: Render blueprint (<code>render.yaml</code>) for 1-click cloud stack creation.</li>
+  <li>✅ <b>Printable Invoices</b>: Clean invoice modal layout supporting <code>@media print</code> with 18% GST calculation and PDF export.</li>
+  <li>✅ <b>Conventional Folder-Wise Commits</b>: Git history organized into modular, structured commits.</li>
+</ul>
+
+<h2>⚠️ 7. Known Limitations</h2>
+<ul>
+  <li><b>Render Free-Tier Sleep</b>: Render free-tier web services sleep after 15 minutes of inactivity. Initial requests after sleep take 15–30 seconds to spin up.</li>
+  <li><b>Future Production Enhancements</b>: Refresh-token rotation, AWS S3 image storage for product catalog, rate limiting, and invoice PDF email delivery workers.</li>
+</ul>
+
+</body>
+</html>
