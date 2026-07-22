@@ -28,7 +28,7 @@ services:
         fromService:
           type: web
           name: orbit-ops-api
-          property: url
+          property: host
 
 databases:
   - name: orbit-ops-db

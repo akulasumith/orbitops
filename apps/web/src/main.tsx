@@ -6,7 +6,8 @@ import {
 } from 'lucide-react';
 import './style.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const rawApi = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API = rawApi.startsWith('http') ? rawApi : `https://${rawApi}`;
 const labels: any = { ADMIN: 'Administrator', SALES: 'Sales', WAREHOUSE: 'Warehouse', ACCOUNTS: 'Accounts' };
 
 const demoAccounts = [
