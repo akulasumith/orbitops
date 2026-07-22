@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: orbit_ops
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-orbit_secure_password_2026}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-orbit_secure_password_2026}@db:5432/orbit_ops
+      JWT_SECRET: ${JWT_SECRET:-production-secure-jwt-secret-key-2026}
+      PORT: 4000
+      CORS_ORIGIN: "*"
+    depends_on:
+      - db
+    restart: always
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:4000
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    restart: always
+
+volumes:
+  postgres_data:
