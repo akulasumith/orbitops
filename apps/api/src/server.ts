@@ -13,6 +13,7 @@ app.use(express.json());
 const asyncRoute = (fn: any) => (req: any, res: any, next: any) => Promise.resolve(fn(req, res, next)).catch(next);
 const page = (query: any) => ({ limit: Math.min(Number(query.limit) || 20, 100), offset: ((Number(query.page) || 1) - 1) * (Number(query.limit) || 20) });
 
+app.get('/', (_req, res) => res.json({ name: 'Orbit Ops API', status: 'online', health: '/health', version: '1.0.0' }));
 app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'orbit-ops-api', time: new Date().toISOString() }));
 
 app.post('/auth/login', asyncRoute(async (req: any, res: any) => {
