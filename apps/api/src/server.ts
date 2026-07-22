@@ -7,7 +7,8 @@ import { allow, AuthRequest, requireAuth, signToken } from './auth.js';
 import 'dotenv/config';
 
 const app = express();
-app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',') || true }));
+app.use(cors({ origin: true, credentials: true }));
+app.options('*', cors());
 app.use(express.json());
 
 const asyncRoute = (fn: any) => (req: any, res: any, next: any) => Promise.resolve(fn(req, res, next)).catch(next);
